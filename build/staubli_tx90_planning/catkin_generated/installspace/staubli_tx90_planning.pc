@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: staubli_tx90_planning
+Description: Description of staubli_tx90_planning
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

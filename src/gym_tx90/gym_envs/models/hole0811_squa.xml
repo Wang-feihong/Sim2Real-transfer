@@ -1,0 +1,39 @@
+<mujoco model="curved_hole">
+    <!-- <default class="hole">
+      <joint type="ball" range="0 6.28319" stiffness="0.04745737717017077" damping="0.04710022033795812" />
+    </default> -->
+    <asset>
+        <mesh name="hole01" file="hole_square_1.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole02" file="hole_square_2.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole03" file="hole_square_3.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole04" file="hole_square_4.STL" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+        <!-- <camera mode="trackcom" target="box" pos="0.01 0.25 1.8" axisangle="0 0.5 1.4 3.1415927" /> -->
+        <camera mode="trackcom" target="box" pos="0.01 0.25 1.99" axisangle="0 0.5 1.4 3.1415927" />
+        <!-- <camera mode="trackcom" target="box" pos="-0.375 -1 1.9" euler="0.61 0 0" /> -->
+        <body mocap="true" name="box" pos="-0.375 -0.05  1.005" quat="1 0 0 0">
+        <!-- <body mocap="true" name="box" pos="0.04 -0.375 0.95" > -->
+        <!-- <body mocap="true" name="box" pos="-0.41 -0.45 0.85" quat="0.7071068 0 -0.7071068 0 ">-->
+            <body name="hole_object">
+                <body name="object1">
+                <geom pos="0 0 0" type="mesh" mesh="hole01" rgba="0.6 0.7 0.9 0.995" />
+                <body name="object2">
+                <geom pos="0 0 0" type="mesh" mesh="hole02" rgba="0.6 0.7 0.9 0.595" />
+                <body name="object3">
+                <geom pos="0 0 0" type="mesh" mesh="hole03" rgba="0.6 0.7 0.9 0.995" />
+                <body name="object4">
+                <geom pos="0 0 0" type="mesh" mesh="hole04" rgba="0.6 0.7 0.9 0.995" />
+                <site name="hole_top" pos="0 0 0.012" type="sphere" size=".005 .005 .005" />
+                <site name="hole_center_top" pos="0 0.001 0.008" type="sphere" size=".005 .005 .005" />
+                <site name="hole_center_bottom" pos="0 0.001 0" type="sphere" size=".005 .005 .005" />
+                <site name="hole_bottom" pos="0 0 0" type="sphere" size=".005 .005 .005" />
+                </body>
+                </body>
+                </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

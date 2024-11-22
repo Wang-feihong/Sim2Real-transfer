@@ -1,0 +1,13 @@
+<!--
+  封装Staubli指定机器人状态节点的启动文件
+-->
+<launch>
+  <!-- 机器人IP(或PC运行仿真) -->
+  <arg name="robot_ip" />
+
+  <!-- 把IP放到参数服务器上 -->
+  <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+
+  <!-- 重用通用工业机器人客户端状态节点 -->
+  <node pkg="industrial_robot_client" type="robot_state" name="robot_state" />
+</launch>

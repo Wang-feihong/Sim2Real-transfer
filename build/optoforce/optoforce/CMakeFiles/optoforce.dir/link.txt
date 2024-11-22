@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/wfh/catkin_ws/devel/lib/liboptoforce.a  CMakeFiles/optoforce.dir/src/optoforce_driver.cpp.o CMakeFiles/optoforce.dir/src/optoforce_array_driver.cpp.o CMakeFiles/optoforce.dir/src/optoforce_acquisition.cpp.o
+/usr/bin/ranlib /home/wfh/catkin_ws/devel/lib/liboptoforce.a

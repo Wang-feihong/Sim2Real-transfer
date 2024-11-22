@@ -1,0 +1,36 @@
+<mujoco model="curved_hole">
+    <asset>
+        <mesh name="hole01" file="hole01.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole02" file="hole02.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole031" file="hole03_1.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole032" file="hole03_2c.STL" scale="0.001 0.001 0.001" />
+        <mesh name="hole033" file="hole03_3.STL" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+        <camera mode="trackcom" target="box" pos="0.01 0.25 1.99" axisangle="0 0.5 1.4 3.1415927" />
+        <body mocap="true" name="box" pos="0.05 -0.375 0.95" quat="1 0 0 0">
+            <body name="object">
+                <body name="object1">
+                <geom pos="0 0 0" type="mesh" mesh="hole01" rgba="0.8 0.3 0.3 0.995" />
+                <body name="object2">
+                <geom pos="0 0 0" type="mesh" mesh="hole02" rgba="0.8 0.3 0.3 0.995" />
+                <body name="object3">
+                <geom pos="0 0 0" type="mesh" mesh="hole031" rgba="0.8 0.3 0.3 0.995" />
+                <body name="object4">
+                <geom pos="0 0 0" type="mesh" mesh="hole032" rgba="0.8 0.3 0.3 0.995" />
+                <body name="object5">
+                <geom pos="0 0 0" type="mesh" mesh="hole033" rgba="0.8 0.3 0.3 0.995" />
+                <site name="hole_top" pos="0 0 0.012" type="sphere" size=".005 .005 .005" />
+                <site name="hole_center_top" pos="0 0.001 0.008" type="sphere" size=".005 .005 .005" />
+                <site name="hole_center_bottom" pos="0 0.001 0" type="sphere" size=".005 .005 .005" />
+                <site name="hole_bottom" pos="0 0 0" type="sphere" size=".005 .005 .005" />
+                </body>
+                </body>
+                </body>
+                </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

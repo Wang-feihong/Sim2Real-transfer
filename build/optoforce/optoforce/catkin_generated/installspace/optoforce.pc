@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: optoforce
+Description: Description of optoforce
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

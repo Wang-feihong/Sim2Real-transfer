@@ -1,0 +1,14 @@
+<!--
+  封装Staubli指定运动数据流接口节点的启动文件
+-->
+<launch>
+  <!-- 机器人IP(或PC运行仿真) -->
+  <arg name="robot_ip" />
+
+  <!-- 把IP放到参数服务器上 -->
+  <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+
+  <!-- 重用通用工业机器人客户端接口流节点 -->
+  <node pkg="industrial_robot_client" type="motion_streaming_interface"
+    name="motion_streaming_interface" />
+</launch>

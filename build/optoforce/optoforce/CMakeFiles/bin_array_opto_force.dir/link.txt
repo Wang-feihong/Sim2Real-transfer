@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++0x -O2 -g -DNDEBUG  -rdynamic CMakeFiles/bin_array_opto_force.dir/examples/test_opto_device_array.cpp.o  -o bin_array_opto_force   -L/home/wfh/catkin_ws/src/optoforce/omd/cmake/../lib/linux  -Wl,-rpath,/home/wfh/catkin_ws/src/optoforce/omd/cmake/../lib/linux /home/wfh/catkin_ws/devel/lib/liboptoforce.a -lOMD 

@@ -1,0 +1,2 @@
+set(optoforce_ros_MESSAGE_FILES "/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceAction.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceActionGoal.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceActionResult.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceActionFeedback.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceGoal.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceResult.msg;/home/wfh/catkin_ws/devel/share/optoforce_ros/msg/OptoForceFeedback.msg")
+set(optoforce_ros_SERVICE_FILES "")

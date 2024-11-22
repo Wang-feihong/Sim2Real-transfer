@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/devel
+
+Name: gym_tx90
+Description: Description of gym_tx90
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

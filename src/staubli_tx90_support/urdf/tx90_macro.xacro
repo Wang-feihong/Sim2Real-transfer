@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find staubli_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="staubli_tx90" params="prefix">
+    <!-- links: main serial chain -->
+    
+    <link name="${prefix}robot_box">
+      <visual>
+        <origin xyz="0 0 0.47" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/robot_box.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.75294 1 0.75294 0.5" />
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${prefix}joint_box" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}robot_box"/>
+    </joint>
+
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/base_link.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_melon_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/base_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="10.733459"/>
+          <origin xyz="0.014288 0.000001 0.122264" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.096590" ixy="-0.000005" ixz="-0.003803"
+                                  iyy="0.087591"  iyz="-0.000001"
+                                                  izz="0.081632"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_1.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_melon_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="16.934564"/>
+          <origin xyz="0.019143 0.024764 -0.064596" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.222318" ixy="0.016499" ixz="0.023794"
+                                  iyy="0.208959" iyz="0.031663"
+                                                 izz="0.157081"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_2.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_melon_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_2.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="12.98711"/>
+          <origin xyz="-0.000008 0.221181 0.173052" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.425299" ixy="0.000005" ixz="-0.000004"
+                                  iyy="0.452311" iyz="-0.002920"
+                                                 izz="0.054493"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_3.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_melon_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_3.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="7.50151"/>
+          <origin xyz="0.000002 0.065008 0.003572" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.058902" ixy="0.000000" ixz="0.000001"
+                                  iyy="0.056884" iyz="-0.003672"
+                                                 izz="0.034271"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_4.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_melon_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_4.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="4.54015"/>
+          <origin xyz="-0.002488 0.049988 0.296156" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.043246" ixy="0.000003" ixz="-0.000683"
+                                  iyy="0.038394" iyz="-0.000004"
+                                                 izz="0.014525"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_5.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_grey_aluminium />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_5.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="0.56876"/>
+          <origin xyz="0.000000 0.049931 0.222823" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.001084" ixy="0.000000" ixz="0.000000"
+                                  iyy="0.001123" iyz="0.000001"
+                                                 izz="0.000383"/>
+      </inertial>
+    </link>
+    <link name="${prefix}link_6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/visual/link_6.stl"/>
+        </geometry>
+        <xacro:material_staubli_ral_grey_aluminium />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://staubli_tx90_support/meshes/tx90/collision/link_6.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="0.03098"/>
+          <origin xyz="-0.000243 0.050000 -0.006293" rpy="0.0 0.0 0.0"/>
+          <inertia ixx="0.000012" ixy="0.000000" ixz="0.000000"
+                                  iyy="0.000011" iyz="0.000000"
+                                                 izz="0.000022"/>
+      </inertial>
+    </link>
+
+    <!-- joints: main serial chain -->
+    <joint name="${prefix}joint_1" type="revolute">
+      <origin xyz="0 0 0.478" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <axis xyz="0 0 1"/>
+      <!-- from Staubli instruction manual:
+      (1) effort limit = 318 Nm if floor mounted
+      (2) effort limit = 111 Nm if wall mounted -->
+      <limit lower="${radians(-180)}" upper="${radians(180)}" effort="318.0" velocity="${radians(400)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_2" type="revolute">
+      <origin xyz="0.050 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${radians(-130)}" upper="${radians(147.5)}" effort="166.0" velocity="${radians(400)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_3" type="revolute">
+      <origin xyz="0 0.05 0.425" rpy="0 0 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${radians(-145)}" upper="${radians(145)}" effort="76.0" velocity="${radians(430)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_4" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${radians(-270)}" upper="${radians(270)}" effort="34.0" velocity="${radians(540)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_5" type="revolute">
+      <origin xyz="0 0 0.425" rpy="0 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${radians(-115)}" upper="${radians(140)}" effort="29.0" velocity="${radians(475)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <joint name="${prefix}joint_6" type="revolute">
+      <origin xyz="0 0 0.100" rpy="0 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${radians(-270)}" upper="${radians(270)}" effort="11.0" velocity="${radians(760)}" />
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ROS-Industrial 'base' frame: base_link to Staubli World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 0.478" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="${prefix}flange" />
+    <joint name="${prefix}joint_6-flange" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${radians(-90.0)} 0" />
+      <parent link="${prefix}link_6" />
+      <child link="${prefix}flange" />
+    </joint>
+
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}flange-tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${radians(90.0)} 0" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}tool0" />
+    </joint>
+
+    <!-- ROS-Industrial 'view' frame: view frame -->
+    <link name="${prefix}view" />
+    <joint name="${prefix}joint_6-view" type="fixed">
+      <origin xyz="0 0 1" rpy="${radians(180.0)} 0 0" />
+      <parent link="${prefix}link_6" />
+      <child link="${prefix}view" />
+    </joint>
+
+    <!-- eyehand_calibration 'camera_color_frame' : eye on hand -->
+    <link name="${prefix}camera_color_frame" />
+    <joint name="${prefix}joint_6-camera_color_frame" type="fixed">
+      <origin xyz="0 0.087304 0.058103" rpy="${radians(0)} ${radians(-1.4)} ${radians(-180)}" />
+      <parent link="${prefix}link_6" />
+      <child link="${prefix}camera_color_frame" />
+    </joint>
+
+    <!-- ..................................... gripper ..................................... -->
+
+    <!-- Defining the colors used in this robot -->
+<!--    <material name="Black">-->
+<!--        <color rgba="0 0 0 1"/>-->
+<!--    </material>-->
+
+<!--    <material name="White">-->
+<!--        <color rgba="1 1 1 1"/>-->
+<!--    </material>-->
+
+<!--    &lt;!&ndash; hand gripper &ndash;&gt;-->
+<!--    <xacro:property name="hand_radius" value="0.04" />-->
+<!--    <xacro:property name="hand_length" value="0.005" />-->
+
+<!--    &lt;!&ndash; finger gripper &ndash;&gt;-->
+<!--    <xacro:property name="gripper_len" value="0.01" />-->
+<!--    <xacro:property name="gripper_width" value="0.01" />-->
+<!--    <xacro:property name="gripper_height" value="0.03" />-->
+
+<!--    &lt;!&ndash; Inertial matrix &ndash;&gt;-->
+<!--    <xacro:macro name="inertial_matrix" params="mass">-->
+<!--        <inertial>-->
+<!--            <mass value="${mass}" />-->
+<!--            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0" />-->
+<!--        </inertial>-->
+<!--    </xacro:macro>-->
+
+<!--    <joint name="${prefix}arm-gripper" type="fixed">-->
+<!--        <origin xyz="0 0 0" rpy="0 0 0" />-->
+<!--        <parent link="${prefix}link_6" />-->
+<!--        <child link="${prefix}hand" />-->
+<!--    </joint>-->
+
+<!--    <link name="${prefix}hand">-->
+<!--        <visual>-->
+<!--            <origin xyz="0 0 0 " rpy="0 0 0" />-->
+<!--            <geometry>-->
+<!--                <cylinder radius="${hand_radius}" length="${hand_length}"/>-->
+<!--            </geometry>-->
+<!--            <material name="Black" />-->
+<!--        </visual>-->
+<!--        <collision>-->
+<!--            <origin xyz="0 0 0 " rpy="0 0 0" />-->
+<!--            <geometry>-->
+<!--                <cylinder radius="${hand_radius}" length="${hand_length}"/>-->
+<!--            </geometry>-->
+<!--        </collision>-->
+<!--        <xacro:inertial_matrix mass="1"/>-->
+<!--    </link>-->
+
+<!--    <joint name="${prefix}finger_joint1" type="fixed">-->
+<!--        <parent link="${prefix}hand"/>-->
+<!--        <child link="${prefix}gripper_finger_link1"/>-->
+<!--        <origin xyz="0 0 0" />-->
+<!--        <axis xyz="0 -1 0" />-->
+<!--        <limit effort="100" lower="0" upper="0.02" velocity="1.0"/>-->
+<!--        <dynamics damping="50" friction="1"/>-->
+<!--    </joint>-->
+
+<!--    <link name="${prefix}gripper_finger_link1">-->
+<!--        <visual>-->
+<!--            <origin xyz="0 0.03 0.015"/>-->
+<!--            <geometry>-->
+<!--                <box size="${gripper_len} ${gripper_width} ${gripper_height}" />-->
+<!--            </geometry>-->
+<!--            <material name="White" />-->
+<!--        </visual>-->
+<!--        <xacro:inertial_matrix mass="1"/>-->
+<!--    </link>-->
+
+<!--    <joint name="${prefix}finger_joint2" type="fixed">-->
+<!--        <parent link="${prefix}hand"/>-->
+<!--        <child link="${prefix}gripper_finger_link2"/>-->
+<!--        <origin xyz="0 0 0" />-->
+<!--        <axis xyz="0 1 0" />-->
+<!--        <limit effort="100" lower="0" upper="0.02" velocity="1.0"/>-->
+<!--        <dynamics damping="50" friction="1"/>-->
+<!--    </joint>-->
+
+<!--    <link name="${prefix}gripper_finger_link2">-->
+<!--        <visual>-->
+<!--            <origin xyz="0 -0.03 0.015"/>-->
+<!--            <geometry>-->
+<!--                <box size="${gripper_len} ${gripper_width} ${gripper_height}" />-->
+<!--            </geometry>-->
+<!--            <material name="White" />-->
+<!--        </visual>-->
+<!--        <xacro:inertial_matrix mass="1"/>-->
+<!--    </link>-->
+
+<!--    &lt;!&ndash; Grasping frame &ndash;&gt;-->
+<!--    <link name="${prefix}grasping_frame"/>-->
+
+<!--    <joint name="${prefix}grasping_frame_joint" type="fixed">-->
+<!--      <parent link="hand"/>-->
+<!--      <child link="grasping_frame"/>-->
+<!--      <origin xyz="0 0 0.02" rpy="0 0 0"/>-->
+<!--    </joint>-->
+
+
+  </xacro:macro>
+</robot>

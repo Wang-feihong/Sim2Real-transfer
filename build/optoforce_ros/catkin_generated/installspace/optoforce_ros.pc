@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: optoforce_ros
+Description: Description of optoforce_ros
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: actionlib_msgs

@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find optoforce_ros)/launch/optoforce_node.launch">
+  </include>
+  <node pkg="staubli_tx90_planning" type="get_coordinate_force.py" name="get_coordinate_force" output="screen" />
+
+</launch>

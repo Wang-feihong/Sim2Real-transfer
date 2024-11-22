@@ -1,0 +1,41 @@
+<launch>
+
+<!-- 这个启动文件提供了一个基于socket通讯的实现标准ROS-I simple_message协议的工业机器人的连接。
+     ***通过将路径数据流传输到机器人来实现运动控制***
+     (对于基于下载的路径控制，使用不同的启动文件)
+
+     启动了几个节点，以提供底层的机器人通信和高层的actionlib支持
+       - robot_state : 发布当前关节位置和机器人状态数据
+       - motion_streaming_interface : 通过向机器人发送运动点来驱动机器人运动
+       - joint_trajectory_action : actionlib接口控制机器人运动
+
+  Usage:
+    robot_interface_streaming.launch robot_ip:=<value>
+-->
+
+  <!-- robot_ip: 机器人的套接字消息服务器的ip地址 -->
+  <arg name="robot_ip" />
+
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- 将指定的参数复制到参数服务器，以供下面的节点使用 -->
+  <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+
+  <param name="$(arg robot_description)" command="xacro  '$(find staubli_tx90_support)/urdf/tx90.xacro'"/>
+ 
+  <rosparam command="load" file="$(find staubli_tx90_support)/config/joint_names_tx90.yaml"/>
+
+  <!-- robot_state: 发布关节位置和机器人状态数据(从socket连接到机器人)-->
+  <include file="$(find staubli_val3_driver)/launch/robot_state.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+  </include>
+
+  <!-- motion_streaming_interface: 通过路径数据流发送运动命令到机器人(使用socket连接到机器人)-->
+  <include file="$(find staubli_val3_driver)/launch/motion_streaming_interface.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+  </include>
+
+  <!-- joint_trajectory_action: 为高层的机器人控制提供actionlib接口-->
+  <node pkg="industrial_robot_client" type="joint_trajectory_action"
+    name="joint_trajectory_action" />
+</launch>

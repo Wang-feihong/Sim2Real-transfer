@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/devel
+
+Name: staubli_tx90_gazebo
+Description: Description of staubli_tx90_gazebo
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

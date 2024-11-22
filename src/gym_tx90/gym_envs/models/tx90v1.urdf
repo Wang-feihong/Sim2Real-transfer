@@ -1,0 +1,397 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="tx90_2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00807513284950989 -0.000143086979797472 0.120134610765178"
+        rpy="0 0 0" />
+      <mass
+        value="11.2570359139201" />
+      <inertia
+        ixx="0.0981795174984158"
+        ixy="-7.02579106827403E-05"
+        ixz="0.00347219296342901"
+        iyy="0.089192509831903"
+        iyz="-2.61598689860705E-05"
+        izz="0.0827545300442863" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="0.019143 -0.024764 0.064595"
+        rpy="0 0 0" />
+      <mass
+        value="16.935" />
+      <inertia
+        ixx="0.22231"
+        ixy="0.016499"
+        ixz="0.023795"
+        iyy="0.20896"
+        iyz="-0.031666"
+        izz="0.15708" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pan_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.478"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="50"
+      velocity="1" />
+  </joint>
+  <link
+    name="upperarm_link">
+    <inertial>
+      <origin
+        xyz="-0.17305 8.7062E-06 0.060181"
+        rpy="0 0 0" />
+      <mass
+        value="12.987" />
+      <inertia
+        ixx="0.054499"
+        ixy="2.7562E-06"
+        ixz="-0.0029194"
+        iyy="0.42529"
+        iyz="4.9816E-06"
+        izz="0.45231" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/upperarm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/upperarm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_lift_joint"
+    type="revolute">
+    <origin
+      xyz="0.05 -0.161 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="upperarm_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="4.7129"
+      effort="50"
+      velocity="1" />
+  </joint>
+  <link
+    name="forearm_link">
+    <inertial>
+      <origin
+        xyz="0.0035719 1.5333E-06 -0.095992"
+        rpy="0 0 0" />
+      <mass
+        value="7.5014" />
+      <inertia
+        ixx="0.034272"
+        ixy="-8.9004E-07"
+        ixz="0.0036716"
+        iyy="0.058901"
+        iyz="-3.2379E-07"
+        izz="0.056884" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="-0.425 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="upperarm_link" />
+    <child
+      link="forearm_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-4.7129"
+      upper="1.5708"
+      effort="50"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist_1_link">
+    <inertial>
+      <origin
+        xyz="-0.0024877 -1.2046E-05 0.14016"
+        rpy="0 0 0" />
+      <mass
+        value="4.5402" />
+      <inertia
+        ixx="0.043246"
+        ixy="-3.0228E-06"
+        ixz="0.00068276"
+        iyy="0.038394"
+        iyz="3.5906E-06"
+        izz="0.014525" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_1_joint"
+    type="revolute">
+    <origin
+      xyz="0.156 0 -0.111"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="forearm_link" />
+    <child
+      link="wrist_1_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="50"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist_2_link">
+    <inertial>
+      <origin
+        xyz="3.3807E-07 -0.022824 -0.031931"
+        rpy="0 0 0" />
+      <mass
+        value="0.56876" />
+      <inertia
+        ixx="0.0010837"
+        ixy="1.1834E-08"
+        ixz="-9.8647E-10"
+        iyy="0.00038272"
+        iyz="-9.0195E-07"
+        izz="0.0011229" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.71765 0.80784 0.76471 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.032 0.269"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="wrist_1_link" />
+    <child
+      link="wrist_2_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="50"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist_3_link">
+    <inertial>
+      <origin
+        xyz="0.00024213 1.6455E-07 -0.0062933"
+        rpy="0 0 0" />
+      <mass
+        value="0.030983" />
+      <inertia
+        ixx="1.1614E-05"
+        ixy="1.3486E-09"
+        ixz="-8.0847E-09"
+        iyy="1.1427E-05"
+        iyz="-1.8237E-11"
+        izz="2.2488E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.71765 0.80784 0.76471 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tx90_2/meshes/wrist_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_3_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0995 -0.032"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="wrist_2_link" />
+    <child
+      link="wrist_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="50"
+      velocity="1" />
+  </joint>
+<!--"添加机器人末端工具ee_link/tool0"-->
+
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: gym_pkg2
+Description: Description of gym_pkg2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

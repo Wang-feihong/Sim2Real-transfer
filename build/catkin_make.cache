@@ -1,0 +1,2 @@
+gym_pkg:gym_pkg2:gym_tx90:optoforce/omd:optoforce/optoforce:optoforce_ros:staubli:staubli_experimental:staubli_resources:staubli_tx90_gazebo:staubli_tx90_moveit_config:staubli_tx90_planning:staubli_tx90_support:staubli_val3_driver:wpr_simulation
+-DCATKIN_DEVEL_PREFIX=/home/wfh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/wfh/catkin_ws/install -G Unix Makefiles

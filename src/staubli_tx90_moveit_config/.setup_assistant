@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: staubli_tx90_support
+    relative_path: urdf/tx90.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/staubli_tx90.srdf
+  CONFIG:
+    author_name: luowei
+    author_email: 947604846@qq.com
+    generated_timestamp: 1619699191

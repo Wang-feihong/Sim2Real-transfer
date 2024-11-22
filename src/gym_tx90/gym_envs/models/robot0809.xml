@@ -1,0 +1,278 @@
+<mujoco model="tx90">
+  <!-- <compiler angle="radian" meshdir="/home/wfh1/桌面/TX_PiH_Force1/gym_envs/models/meshes0416/visual/" autolimits="true"/> -->
+  <default class="ur5e">
+    <joint axis="0 1 0" range="-6.28319 6.28319" />
+    <position ctrlrange="-6.2831 6.2831" />
+
+    <default class="visual_tool">
+      <!-- <geom type="capsule" contype="0" conaffinity="0" size=".0025 .001" group="2" /> -->
+      <geom type="cylinder" contype="0" conaffinity="0" size=".035 .0005" />
+    </default>
+    <default class="collision_tool">
+      <!-- <geom type="capsule" size=".0025 .001" group="3" /> -->
+      <geom type="cylinder" contype="0" conaffinity="0" size=".035 .0005" />
+    </default>
+    <default class="tool_ball_joint">
+      <!-- <joint type="ball" range="0 6.28319" stiffness="0.04745737717017077" damping="0.04710022033795812" /> -->
+      <joint type="ball" range="0 6.28319" stiffness="0.04745737717017077" damping="0.04710022033795812" />
+    </default>
+
+    <default class="visual_arm">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" />
+    </default>
+    <default class="collision_arm">
+      <geom type="capsule" group="3" />
+      <default class="eef_collision">
+        <geom type="cylinder" />
+      </default>
+    </default>
+    <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4" />
+
+    <default class="size3">
+      <joint armature="0.1" damping="150" />
+      <position kp="5500" forcerange="-150 150" ctrllimited="true" />
+      <default class="size3_limited">
+        <joint range="-3.1415 3.1415" />
+        <position ctrlrange="-3.1415 3.1415" ctrllimited="true" />
+      </default>
+    </default>
+    <default class="size1">
+      <joint armature="0.1" damping="15" />
+      <position kp="5000" forcerange="-28 28" />
+    </default>
+
+    <default class="2f85">
+        <mesh scale="0.001 0.001 0.001" />
+        <general biastype="affine" />
+
+        <joint axis="1 0 0" />
+        <default class="driver">
+            <joint range="0 0.8" armature="0.005" damping="0.1" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1" />
+        </default>
+        <default class="follower">
+            <joint range="-0.872664 0.872664" pos="0 -0.018 0.0065" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1" />
+        </default>
+        <default class="spring_link">
+            <joint range="-0.29670597283 0.8" stiffness="0.05" springref="2.62" damping="0.00125" />
+        </default>
+        <default class="coupler">
+            <joint range="-1.57 0" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1" />
+        </default>
+
+        <default class="visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+        </default>
+        <default class="collision">
+            <geom type="mesh" group="3" />
+            <default class="pad_box1">
+            <geom mass="0" type="box" pos="0 -0.0026 0.028125" size="0.011 0.004 0.009375" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.55 0.55 0.55 1" />
+            </default>
+            <default class="pad_box2">
+            <geom mass="0" type="box" pos="0 -0.0026 0.009375" size="0.011 0.004 0.009375" friction="0.6" solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.45 0.45 0.45 1" />
+            </default>
+        </default>
+    </default>
+  </default>
+    
+    <asset>
+        <mesh name="beam" file="beam.STL" scale="0.001 0.001 0.001" />
+        <mesh name="beam_1" file="beam_1.STL" scale="0.001 0.001 0.001" />
+        <mesh name="beam_2" file="beam_2.STL" scale="0.001 0.001 0.001" />
+        <mesh name="beam_front" file="beam_front.STL" scale="0.001 0.001 0.001" />
+        <mesh name="lower" file="lower.STL" scale="0.001 0.001 0.001" />
+        <mesh name="role" file="role.STL" scale="0.001 0.001 0.001" />
+        <mesh name="role_1" file="role_1.STL" scale="0.001 0.001 0.001" />
+        <mesh name="role_2" file="role_2.STL" scale="0.001 0.001 0.001" />
+        <mesh name="role_3" file="role_3.STL" scale="0.001 0.001 0.001" />
+        <mesh name="table" file="table.STL" scale="0.001 0.001 0.001" />
+        <mesh name="upper" file="upper.STL" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <asset>
+        
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="shoulder_link" file="shoulder_link.STL" />
+        <mesh name="upperarm_link" file="upperarm_link.STL" />
+        <mesh name="forearm_link" file="forearm_link.STL" />
+        <mesh name="wrist_1_link" file="wrist_1_link.STL" />
+        <mesh name="wrist_2_link" file="wrist_2_link.STL" />
+        <mesh name="wrist_3_link" file="wrist_3_link.STL" />
+
+        <mesh name="base_mount" file="base_mount.stl" scale="0.001 0.001 0.001" />
+        <mesh name="base_0" file="base.stl" scale="0.001 0.001 0.001" />
+        <mesh name="driver" file="driver.stl" scale="0.001 0.001 0.001" />
+        <mesh name="coupler" file="coupler.stl" scale="0.001 0.001 0.001" />
+        <mesh name="follower" file="follower.stl" scale="0.001 0.001 0.001" />
+        <mesh name="pad" file="pad.stl" scale="0.001 0.001 0.001" />
+        <mesh name="silicone_pad" file="silicone_pad.stl" scale="0.001 0.001 0.001" />
+        <mesh name="spring_link" file="spring_link.stl" scale="0.001 0.001 0.001" />
+
+        
+        <texture name="ur5_tex" type="2d" builtin="flat" height="32" width="32" rgb1="0.45 0.45 0.45" />
+        <texture name="bench_tex" type="2d" builtin="flat" height="32" width="32" rgb1="0.7 0.7 0.7" />
+        <texture name="sky_tex" type="skybox" builtin="gradient" width="100" height="100" rgb1="1 1 1" rgb2="0.3 0.3 0.8" />
+        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01" />
+        <texture name="floor_tex" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="100" height="100" />
+
+        
+        <material name="tx90_mat" texture="ur5_tex" shininess="0.9" specular="0.75" reflectance="0.3" />
+        <material name="floor_mat" texture="floor_tex" shininess="0.8" texrepeat="10 10" specular="0.7" reflectance="0.5" />
+        <material name="bench_mat" texture="bench_tex" shininess="0.1" specular="0.5" reflectance="0.2" />
+    </asset>
+
+    <asset>
+        <mesh name="usb1" file="Apple2USB - b1-2.STL" scale="0.001 0.001 0.001" />       
+        <mesh name="usb3" file="Apple2USB - b3-3.STL" scale="0.001 0.001 0.001" />     
+        <mesh name="usb21" file="2usb1.STL" scale="0.001 0.001 0.001" />
+        <mesh name="usb22" file="2usb2.STL" scale="0.001 0.001 0.001" />       
+        <mesh name="usb23" file="2usb3.STL" scale="0.001 0.001 0.001" />  
+        <mesh name="usb24" file="2usb4.STL" scale="0.001 0.001 0.001" />   
+        <!-- <mesh name="usb1" file="Apple2USB - b1-2.STL" scale="0.005 0.005 0.005" />       
+        <mesh name="usb3" file="Apple2USB - b3-3.STL" scale="0.005 0.005 0.005" />     
+        <mesh name="usb21" file="2usb1.STL" scale="0.005 0.005 0.005" />
+        <mesh name="usb22" file="2usb2.STL" scale="0.005 0.005 0.005" />       
+        <mesh name="usb23" file="2usb3.STL" scale="0.005 0.005 0.005" />  
+        <mesh name="usb24" file="2usb4.STL" scale="0.005 0.005 0.005" />    -->
+    </asset>
+
+    <worldbody>
+        <light diffuse=".9 .9 .9" pos="0 0 3" target="platform" active="true" dir="0 0 -1"/>
+            <!-- 板子、立柱 -->
+            <body>
+                <geom type="box" size=".08 .08 .40" pos="0 0 0.45" rgba=".75 .75 0.75 1" /></body>
+            <body>
+                <geom type="box" size=".8 .8 .01" pos="0 0 0.85" rgba=".35 .45 0.25 0.6" /></body>
+
+            <body name="platform" pos="0 0 2.190" quat="-0.7071 0.7071 0 0">
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="beam" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="beam_1" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="beam_2" />
+
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="lower" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="role" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="role_1" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="role_2" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="role_3" />
+                <geom type="mesh" rgba="1 0.6 0.2 1" group="0" mesh="upper" />
+                <!-- 板子、立柱 -->
+                <!-- <body>
+                  <geom type="box" size=".8 .01 .8" pos="0 1.35 0" rgba=".75 .75 0.75 0.6" /></body>
+                <body>
+                  <geom type="box" size=".08 .42 .08" pos="0 1.77 0" material="bench_mat" /></body> -->
+
+                <body name="base_link" pos="0 0.11 0" quat="-0.7071 0.7071 0 0" childclass="ur5e">
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 0.6 0.2 1" mesh="base_link" />
+                    <geom type="mesh" rgba="1 0.6 0.2 1" group="1" mesh="base_link" material="tx90_mat" />
+                    <body name="shoulder_link" pos="0 0 0.478" quat="-3.67321e-06 1 0 0">
+                        <inertial pos="0.019143 -0.024764 0.064595" quat="0.931953 -0.251827 -0.0984466 0.241569" mass="16.935" diaginertia="0.233559 0.221861 0.13293" />
+                        <joint name="shoulder_pan_joint" class="size3" pos="0 0 0" axis="0 0 1" range="-3.1416 3.1416" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 0.6 0.2 1" mesh="shoulder_link" />
+                        <geom type="mesh" rgba="1 0.6 0.2 1" group="1" mesh="shoulder_link" material="tx90_mat" />
+                        <body name="upperarm_link" pos="0.05 -0.161 0" quat="0.707105 0.707108 0 0">
+                            <inertial pos="-0.17305 8.7062e-06 0.060181" quat="6.77563e-05 0.704508 6.19549e-05 0.709696" mass="12.987" diaginertia="0.452331 0.42529 0.0544776" />
+                            <joint name="shoulder_lift_joint" class="size3" pos="0 0 0" axis="0 0 1" range="-1.5708 4.7129" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 0.6 0.2 1" mesh="upperarm_link" />
+                            <geom type="mesh" rgba="1 0.6 0.2 1" group="1" mesh="upperarm_link" material="tx90_mat" />
+                            <body name="forearm_link" pos="-0.425 0 0" quat="0.707105 0 0 -0.707108">
+                                <inertial pos="0.0035719 1.5333e-06 -0.095992" quat="0.459315 0.537577 0.537764 0.459185" mass="7.5014" diaginertia="0.058901 0.0574652 0.0336908" />
+                                <joint name="elbow_joint" class="size3" pos="0 0 0" axis="0 0 1" range="-4.7129 1.5708" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 0.6 0.2 1" mesh="forearm_link" />
+                                <geom type="mesh" rgba="1 0.6 0.2 1" group="1" mesh="forearm_link" material="tx90_mat" />
+                                <body name="wrist_1_link" pos="0.156 0 -0.111" quat="0.499998 0.5 0.500002 0.5">
+                                    <inertial pos="-0.0024877 -1.2046e-05 0.14016" quat="0.999929 8.02222e-05 -0.0118768 -0.000300684" mass="4.5402" diaginertia="0.0432622 0.038394 0.0145088" />
+                                    <joint name="wrist_1_joint" class="size1" pos="0 0 0" axis="0 0 -1" range="-3.1416 3.1416" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="wrist_1_link" />
+                                    <geom type="mesh" rgba="1 1 1 1" group="1" mesh="wrist_1_link" material="tx90_mat" />
+                                    <body name="wrist_2_link" pos="0 0.032 0.269" quat="0.707105 -0.707108 0 0">
+                                        <inertial pos="3.3807e-07 -0.022824 -0.031931" quat="0.499685 0.500302 -0.500307 0.499706" mass="0.56876" diaginertia="0.0011229 0.0010837 0.000382719" />
+                                        <joint name="wrist_2_joint" class="size1" pos="0 0 0" axis="0 0 -1" range="-3.1416 3.1416" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.71765 0.80784 0.76471 1" mesh="wrist_2_link" />
+                                        <geom type="mesh" rgba="0.71765 0.80784 0.76471 1" group="1" mesh="wrist_2_link" material="tx90_mat" />
+                                        <body name="wrist_3_link" pos="0 -0.0995 -0.032" quat="-2.59734e-06 2.59735e-06 -0.707108 0.707105">
+                                            <inertial pos="0.00024213 1.6455e-07 -0.0062933" quat="0.498008 0.501613 -0.498379 0.501986" mass="0.030983" diaginertia="2.2488e-05 1.1614e-05 1.1427e-05" />
+                                            <joint name="wrist_3_joint" class="size1" pos="0 0 0" axis="0 0 -1" range="-3.1416 3.1416" />
+                                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.71765 0.80784 0.76471 1" mesh="wrist_3_link" />
+                                            <geom type="mesh" rgba="0.71765 0.80784 0.76471 1" group="1" mesh="wrist_3_link" material="tx90_mat" />
+                                            <site name="attachment_site" pos="0 0 0" quat="0 0 0 1" />
+                                            <body name="ee_link" pos="0 0 0" >
+                                                <!-- "半径/半高" -->
+                                                <site name="ee_site" pos="0 0 0" size="0.035 0.035" type="cylinder" rgba="0.5 0.5 0.5 1" />
+                                                <!-- <body name="sfot_body" pos="0 0 0.034">
+                                                    <geom class="collision_tool" rgba="0.5 0.5 0.5 0."/>
+                                                    <geom class="visual_tool" rgba="1 0.5 0.5 0.1" />
+                                                    <joint class="tool_ball_joint" />
+
+                                                <body name="usb1" pos="0 0 0.001" quat="1 0 0 0"> -->
+                                                <body name="usb1" pos="0 0 0.035" quat="1 0 0 0">
+                                                    <geom type="box" size=".006 .00225  .025" pos="0 0 0.0" rgba=" 0.9 0.2 0.5 0.995 " />
+<!--                                                    <geom pos="0 0 0" type="mesh" mesh="usb1" rgba="0.7 0.1 0.2 0.995" />-->
+                                                    <body name="usb2" pos="0 0 0" quat="1 0 0 0">
+<!--                                                        <geom pos="0 0 0" type="mesh" mesh="usb3" rgba="0 0.3 0.7 0.995" />-->
+                                                        <body name="usb3" pos="0 0 0" quat="1 0 0 0">
+<!--                                                            <geom pos="0 0 0" type="mesh" mesh="usb21" rgba="0.2 0.6 0.3 0.995" />-->
+<!--                                                            <geom type="box" size=".006 .0025  .006" pos="0 0 0.019" rgba=" 0.2 0.6 0.3 0.995 " />-->
+                                                            <body name="usb4" pos="0 0 0" quat="1 0 0 0">
+<!--                                                                <geom pos="0 0 0" type="mesh" mesh="usb22" rgba="0.2 0.6 0.3 0.995" />-->
+                                                                <body name="usb5" pos="0 0 0" quat="1 0 0 0">
+<!--                                                                    <geom pos="0 0 0" type="mesh" mesh="usb23" rgba="0.2 0.6 0.3 0.995" />-->
+                                                                    <body name="usb6" pos="0 0 0" quat="1 0 0 0">
+<!--                                                                        <geom pos="0 0 0" type="mesh" mesh="usb24" rgba="0.2 0.6 0.3 0.995" />-->
+                                                                        <site name="usb_top" type="sphere" size=".001 .001 .001" pos="0 0 0.013" quat="1 0 0 0" />
+                                                                        <site name="usb_bottom" type="sphere" size=".001 .001 .001" pos="0 0 0.025" quat="1 0 0 0" />
+                                                                        <!-- <body><geom type="box" size=".002 .0005 .002" pos="0 0.003 0.015" rgba=".75 .75 0.75 0.7" /></body> -->
+                                                                    </body>
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <!-- </body> -->
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+    </worldbody>
+
+    <contact>
+        <exclude body1="platform" body2="base_link" />
+        <exclude body1="base_link" body2="shoulder_link" />
+        <exclude body1="shoulder_link" body2="upperarm_link" />
+        <exclude body1="upperarm_link" body2="forearm_link" />
+        <exclude body1="forearm_link" body2="wrist_1_link" />
+        <exclude body1="wrist_1_link" body2="wrist_2_link" />
+        <exclude body1="wrist_2_link" body2="wrist_3_link" />
+        <exclude body1="ee_link" body2="wrist_3_link" />
+    </contact>
+
+    <actuator>
+        <general class="size3" name="shoulder_pan_T" ctrlrange="-3.1416 3.1416" joint="shoulder_pan_joint" /> 
+        <general class="size3" name="shoulder_lift_T" ctrlrange="-1.5708 4.7129" joint="shoulder_lift_joint" />
+        <general class="size3" name="forearm_T" ctrlrange="-4.7129 1.5708" joint="elbow_joint" />
+        <general class="size1" name="wrist_1_T" ctrlrange="-3.1416 3.1416" joint="wrist_1_joint" />  
+        <general class="size1" name="wrist_2_T" ctrlrange="-3.1416 3.1416" joint="wrist_2_joint" />
+        <general class="size1" name="wrist_3_T" ctrlrange="-3.1416 3.1416" joint="wrist_3_joint" />
+
+
+
+
+
+
+    </actuator>
+
+    <sensor>
+        <force name="ee_force_sensor" site="ee_site" />
+        <torque name="ee_torque_sensor" site="ee_site" />
+    </sensor>
+    <keyframe>
+        <key name="home" time="0" ctrl="1.57 0 0 0 0 0" />
+        <!-- <key name="home" time="1" ctrl="45 0 0 0 0 0" />
+        <key name="home2" time="2" ctrl="90 0 0 0 0 0" /> -->
+        <!-- self.init_joint = np.array([0.754, 0.66, -1.54, 0, -0.88, 0]) -->
+    </keyframe>
+</mujoco>

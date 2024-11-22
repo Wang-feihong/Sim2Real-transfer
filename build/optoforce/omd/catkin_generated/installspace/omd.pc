@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: omd
+Description: Description of omd
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib /home/wfh/catkin_ws/src/optoforce/omd/lib/linux/libOMD.so
+Requires: 

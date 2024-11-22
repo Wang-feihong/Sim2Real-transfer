@@ -1,0 +1,8 @@
+prefix=/home/wfh/catkin_ws/install
+
+Name: staubli_val3_driver
+Description: Description of staubli_val3_driver
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
